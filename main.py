@@ -73,8 +73,8 @@ def post_om2m(node_id, node_data, onem2m_endpoint, headers):
     print(f"New data fetched for node {node_id}: {node_data} at {epoch_time}")
     data_dict = {
         "epoch_time": epoch_time,
-        "water_level": node_data["field6"],
-        "temp": node_data["field7"],
+        "water_level": float(node_data["field6"]),
+        "temp": float(node_data["field7"]),
     }
     values_list = list(data_dict.values())
     payload = {
